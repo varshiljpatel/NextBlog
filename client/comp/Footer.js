@@ -11,7 +11,7 @@ const Footer = () => {
                         </svg>
                         <span class="ml-3 text-white font-black text-xl">BLOG</span>
                     </a>
-                    <p class="text-sm text-white sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-200 sm:py-2 sm:mt-0 mt-4">Copyright © 2023 : Varshil J. Patel
+                    <p class="text-sm text-white sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-200 sm:py-2 sm:mt-0 mt-4">Copyright © 2023
                     </p>
                     <span class="inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start">
                         <a class="text-white">
