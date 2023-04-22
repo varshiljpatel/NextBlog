@@ -6,7 +6,7 @@ const InputF = (props) => {
                     {props.children}
                 </div>
                 <input
-                    className='placeholder:text-black focus:border-none focus:border-0 selection:border-0 outline-0 focus:outline-0 border-none border-0 w-[90%]'
+                    className='placeholder:text-black bg-transparent focus:border-none focus:border-0 selection:border-0 outline-0 focus:outline-0 border-none border-0 w-[90%]'
                     type={props.type}
                     value={props.value}
                     onChange={(e) => props.setValue(e.target.value)}
