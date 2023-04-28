@@ -9,7 +9,6 @@ const GnGBtn = ({ className }) => {
   const router = useRouter();
   try {
     if (session?.data?.user?.email) {
-      console.log('SEss', session);
       router.push({
         pathname: '/',
       });

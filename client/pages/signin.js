@@ -37,7 +37,7 @@ const signin = () => {
                     </button>
                 </div>
                 <span className='my-10 w-full flex items-center justify-center gap-x-3 font-medium'><span className='w-[75px] h-[2px] bg-black'></span>OR<span className='w-[75px] h-[2px] bg-black'></span></span>
-            <GnGBtn className={'mb-16 w-full'} />
+                <GnGBtn className={'mb-16 w-full'} />
             </form>
         </div>
     )

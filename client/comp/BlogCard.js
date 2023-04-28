@@ -2,11 +2,13 @@ import Image from 'next/image';
 import React, { useEffect, useState } from 'react';
 import { BsArrowRight, BsArrowLeft } from 'react-icons/Bs';
 import PrevNext from './PrevNext';
+import Loader from '@/comp/Loader'
 
 const BlogCard = () => {
     const [data, setData] = useState([])
     const [prev, setPrev] = React.useState(0);
     const [next, setNext] = React.useState(10);
+    const [load, setLoad] = useState(true);
     useEffect(() => {
         let isApiSubscribed = true;
         if (isApiSubscribed) {
@@ -14,6 +16,7 @@ const BlogCard = () => {
                 const postApi = await fetch('https://jsonplaceholder.typicode.com/posts')
                 const res = await postApi.json()
                 setData(res)
+                setLoad(false)
             }
             fetchData()
         }
@@ -21,6 +24,11 @@ const BlogCard = () => {
             isApiSubscribed = false;
         };
     }, [])
+    if (load) {
+        return (
+            <Loader />
+        )
+    }
     return (
         <div>
             <PrevNext payload={data} prev={prev} next={next} setNext={setNext} setPrev={setPrev} className='my-12' />
@@ -49,7 +57,7 @@ const BlogCard = () => {
                                     <p className='text-black text-sm my-2'>
                                         {post.body}
                                     </p>
-                                    <button type='button' className=' flex items-center gap-x-2 rounded-sm bg-slate-900 text-white text-xs font-semibold py-1.5 px-4 absolute bottom-0 left-0'>
+                                    <button type='button' className=' flex items-center gap-x-2 rounded-sm bg-slate-900 text-white text-xs font-semibold md:py-1.5 py-3 md:px-4 px-8 absolute bottom-0 left-0'>
                                         Read More <BsArrowRight className='text-sm'></BsArrowRight>
                                     </button>
                                 </div >
